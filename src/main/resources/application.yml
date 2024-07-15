@@ -1,0 +1,21 @@
+server:
+  port: 8089
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jdbc_db
+    username: username
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+# ????????? Liquibase
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    contexts: development, production
+    default-schema: public
+    parameters:
+      schemaName: public
+
+# ???????????
+logging:
+  level:
+    liquibase: info
