@@ -1,9 +1,7 @@
 package ru.aliev.jdbc_example.consent;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
@@ -29,6 +27,8 @@ public class DocConsent {
     private boolean signetBank;
     @Column("signet_mfk")
     private boolean signetMfk;
-    @Reference
-    private Metadata metadataId;
+    @Column("mdm_id")
+    private String mdmId;
+    @Column("metadata_id")
+    private Long metadataId;
 }
